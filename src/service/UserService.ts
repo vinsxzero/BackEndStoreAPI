@@ -57,6 +57,7 @@ class UserService{
         }
 
         user.name=name
+        user.email=email
         user.admin=admin
         user.password=passwordHash
 

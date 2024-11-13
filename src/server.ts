@@ -3,14 +3,17 @@ import express,{ Request, Response, NextFunction } from "express";
 import "express-async-errors"
 import "reflect-metadata";
 import "./database/index";
+const cors = require('cors');
 
 // Importando funções de rotas
 import { router } from "./routes";
 
 const app = express();
 
+
 // Declarando a biblioteca
 app.use(express.json()); 
+app.use(cors())
 // Inicializando a função de rotas
 app.use(router);
 
@@ -31,4 +34,4 @@ app.use(
 )
 // Inicializando o servidor
 console.log("Start Server At:3000");
-app.listen(3000, "0.0.0.0");
+app.listen(3000);

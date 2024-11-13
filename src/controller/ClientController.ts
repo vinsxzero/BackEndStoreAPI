@@ -3,11 +3,11 @@ import { ClientService } from "../service/ClientService";
 
 class ClientController{
     async createClient(request: Request, response: Response) {
-        const {name, email, cpf, address, phone } = request.body;
+        const {name, description, cpf, address, phone } = request.body;
         const client = 
         {
             name:name,
-            email:email,
+            description:description,
             cpf:cpf,
             address:address,
             phone:phone
@@ -28,7 +28,7 @@ class ClientController{
 
 
     async updateClient(request: Request, response: Response) {
-        const {name, email, cpf, address, phone } = request.body;
+        const {name, description, cpf, address, phone } = request.body;
 
         const id = request.params.id;
 
@@ -36,7 +36,7 @@ class ClientController{
         {
             id: id,
             name:name,
-            email:email,
+            description:description,
             cpf:cpf,
             address:address,
             phone:phone

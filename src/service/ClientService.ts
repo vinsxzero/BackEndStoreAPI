@@ -3,10 +3,11 @@ import { IClientRequest } from "../interface/IClientRequest";
 import { ClientRepositories } from "../repositories/clientRepositories";
 
 class ClientService{
-    async createClient({name, cpf, address, phone}: IClientRequest){
+    async createClient({name, description, cpf, address, phone}: IClientRequest){
         const clientRepositories = getCustomRepository(ClientRepositories)
         const client = clientRepositories.create({
             name,
+            description,
             cpf,
             address,
             phone,
@@ -27,17 +28,18 @@ class ClientService{
     }
 
 
-    async updateClient({id, name, cpf, address, phone}: IClientRequest){
+    async updateClient({id, name, description, cpf, address, phone}: IClientRequest){
         const clientRepositories = getCustomRepository(ClientRepositories)
         
         const client = await clientRepositories.findOne({
-            id,
+            id
         });
         if(!client){
             throw new Error("Client does not exist")
         }
 
         client.name = name
+        client.description = description
         client.cpf = cpf
         client.address = address
         client.phone = phone

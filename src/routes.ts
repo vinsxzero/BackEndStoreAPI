@@ -1,7 +1,6 @@
 import { Router } from "express";
 
-import { AuthenticateUserController } from "./controller/AuthenticateUserController";
-import { ensureAuthenticated} from "./middleware/ensureAuthenticated";
+
 
 import { UserController } from "./controller/UserController";
 import { SaleController } from "./controller/SaleController";
@@ -17,12 +16,12 @@ const clientController = new ClientController();
 const productController = new ProductController();
 const categoryController = new CategoryController();
 
-const autenticateUserController  = new AuthenticateUserController();
-router.post("/login", autenticateUserController.authenticateUser);
-router.use((req, res, next) => {
-    console.log('Time:', Date.now())
-    ensureAuthenticated(req, res, next)
-})
+//const autenticateUserController  = new AuthenticateUserController();
+//router.post("/login", autenticateUserController.authenticateUser);
+//router.use((req, res, next) => {
+    //console.log('Time:', Date.now())
+  //  ensureAuthenticated(req, res, next)
+//})
 
 
 

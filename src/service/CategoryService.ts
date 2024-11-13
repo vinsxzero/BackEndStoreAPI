@@ -21,7 +21,6 @@ class CategoryService{
         return category;
     }
 
-
     async listCategories(){
         const categoryRepositories = getCustomRepository(CategoryRepositories);
         const categories = await categoryRepositories
@@ -30,7 +29,6 @@ class CategoryService{
         
         return categories
     }
-
 
     async updateCategory({ id, name, description }){
         const categoryRepositories = getCustomRepository(CategoryRepositories)
@@ -57,7 +55,6 @@ class CategoryService{
         }
         
         const categoryRepositories = getCustomRepository(CategoryRepositories)
-
         const categoryExists = categoryRepositories.findOne({
             id,
         })
