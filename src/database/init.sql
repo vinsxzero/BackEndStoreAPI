@@ -1,0 +1,4 @@
+-- update mysql.user set host='%' where user='root';
+-- FLUSH PRIVILEGES;
+-- ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'root';
+-- FLUSH PRIVILEGES;
